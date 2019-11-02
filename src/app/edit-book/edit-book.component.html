@@ -1,0 +1,33 @@
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Name
+      <br>
+      <input type="text" formControlName="name">
+    </label>
+  </div>
+  <div *ngIf="postForm.get('name').invalid && postForm.get('name').touched" style="color: red">
+    Text is required and min length is 2
+  </div>
+  <div>
+    <label>
+      Author
+      <br>
+      <input type="text" formControlName="author">
+    </label>
+  </div>
+  <div *ngIf="postForm.get('author').invalid && postForm.get('author').touched" style="color: red">
+    Text is required and min length is 2
+  </div>
+  <div>
+    <label>
+      Publisher
+      <br>
+      <input type="text" formControlName="publisher">
+    </label>
+  </div>
+  <div *ngIf="postForm.get('publisher').invalid && postForm.get('publisher').touched" style="color: red">
+    Text is required and min length is 2
+  </div>
+  <button type="submit">Submit</button>
+</form>
