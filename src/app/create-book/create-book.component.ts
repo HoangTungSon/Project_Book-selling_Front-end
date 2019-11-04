@@ -22,7 +22,7 @@ export class CreateBookComponent implements OnInit {
   ngOnInit() {
     this.postForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(10)]],
-      author: ['', [Validators.required, Validators.minLength(10)]],
+      author_name: ['', [Validators.required, Validators.minLength(10)]],
       publisher: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
@@ -34,7 +34,7 @@ export class CreateBookComponent implements OnInit {
           next => {
             this.postForm.reset({
               name: '',
-              author: '',
+              author_name: '',
               publisher: '',
             });
             console.log('success');
